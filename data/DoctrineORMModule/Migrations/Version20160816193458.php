@@ -55,7 +55,7 @@ class Version20160816193458 extends AbstractMigration
                 mail INT DEFAULT NULL,
                 systemName VARCHAR(256) DEFAULT NULL,
                 fileName VARCHAR(256) NOT NULL,
-                path VARCHAR(256) NOT NULL,
+                path VARCHAR(256) DEFAULT NULL,
                 INDEX IDX_34465155126AC48 (mail),
                 PRIMARY KEY(id)
             ) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB;
