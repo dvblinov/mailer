@@ -1,0 +1,21 @@
+<?php $this->form->prepare(); ?>
+<?php echo $this->form()->openTag($this->form); ?>
+    <div class="form-group">
+        <?php echo $this->formRow($this->form->get('to')); ?>
+    </div>
+    <div class="form-group">
+        <?php echo $this->formRow($this->form->get('cc')); ?>
+    </div>
+    <div class="form-group">
+        <?php echo $this->formRow($this->form->get('subject')); ?>
+    </div>
+    <div class="form-group">
+        <?php echo $this->formRow($this->form->get('content')); ?>
+    </div>
+    <div class="form-group">
+        <?php echo $this->formCollection($this->form->get('attachedFiles')); ?>
+    </div>
+    <div class="form-group">
+        <?php echo $this->formButton($this->form->get('send')); ?>
+    </div>
+<?php echo $this->form()->closeTag(); ?>

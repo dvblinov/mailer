@@ -1,0 +1,8 @@
+.bootstrap-tagsinput {
+    display: block !important;
+}
+
+.attachment-remove {
+    cursor: pointer;
+    padding-left: 5px;
+}

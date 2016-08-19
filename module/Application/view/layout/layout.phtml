@@ -1,0 +1,71 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Mailer')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/style.css')
+                        //->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/ckeditor.init.js')
+        ; ?>
+
+    </head>
+    <body>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-form">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="btn btn-default navbar-btn" id="mail-get-btn" type="button" href="/mail/get-mails">
+                        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                        Загрузить почту
+                    </button>
+                    <button class="btn btn-default navbar-btn" id="mail-new-btn" type="button" href="/mail/new">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        Написать письмо
+                    </button>
+                    <span id="status-panel"></span>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <?php echo $this->mailBoxList(); ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10" id="app-content">
+                <?php echo $this->content; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2 hidden" id="mail-panel">
+                <div class="panel panel-default" id="mail-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- /container -->
+    <?php echo $this->inlineScript() ?>
+    </body>
+</html>

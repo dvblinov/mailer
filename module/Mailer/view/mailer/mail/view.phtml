@@ -1,0 +1,17 @@
+<?php
+    /** @var \Mailer\Entity\Mail $mail */
+    $mail = $this->mail;
+?>
+<div class="panel-body">
+    <?php echo $mail->getContent(); ?>
+</div>
+<?php if ($mail->getAttachments()->count()): ?>
+    <div class="panel-footer">
+        <?php foreach ($mail->getAttachments() as $attachment): ?>
+            <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+            <a class="btn-link" href="/attachment/download/<?php echo $attachment->getId(); ?>">
+                <?php echo $attachment->getFileName(); ?>
+            </a><br/>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>

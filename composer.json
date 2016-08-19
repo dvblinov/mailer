@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": ">=5.4.0",
+        "zendframework/zendframework": "2.4.*",
+        "doctrine/dbal": "2.5.4",
+        "doctrine/doctrine-orm-module": "0.9.2",
+        "doctrine/migrations": "1.2.2",
+        "widmogrod/zf2-assetic-module": "1.6.0",
+        "thadafinser/zfc-datagrid": "0.11.0",
+        "ddeboer/imap": "0.5.2"
+    }
+}
